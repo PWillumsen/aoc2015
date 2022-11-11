@@ -65,7 +65,7 @@ fn main() {
     let day_padded = format!("{:02}", day);
 
     let input_path = format!("src/inputs/{}.txt", day_padded);
-    let example_path = format!("src/examples/{}.txt", day_padded);
+    // let example_path = format!("src/examples/{}.txt", day_padded);
     let module_path = format!("src/bin/{}.rs", day_padded);
 
     let mut file = match safe_create_file(&module_path) {
@@ -96,15 +96,15 @@ fn main() {
         }
     }
 
-    match create_file(&example_path) {
-        Ok(_) => {
-            println!("Created empty example file \"{}\"", &example_path);
-        }
-        Err(e) => {
-            eprintln!("Failed to create example file: {}", e);
-            process::exit(1);
-        }
-    }
+    // match create_file(&example_path) {
+    //     Ok(_) => {
+    //         println!("Created empty example file \"{}\"", &example_path);
+    //     }
+    //     Err(e) => {
+    //         eprintln!("Failed to create example file: {}", e);
+    //         process::exit(1);
+    //     }
+    // }
 
     println!("---");
     println!("🎄 Type `cargo day {}` to run your solution.", &day_padded);
