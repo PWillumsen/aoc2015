@@ -114,8 +114,10 @@ pub fn part_one(input: &str) -> Option<u16> {
     Some(parsed.get_value(&"a".parse().unwrap()))
 }
 
-pub fn part_two(input: &str) -> Option<u32> {
-    None
+pub fn part_two(input: &str) -> Option<u16> {
+    let parsed = Solution::new(input);
+    parsed.wires.borrow_mut().insert("b".to_string(), 46065);
+    Some(parsed.get_value(&"a".parse().unwrap()))
 }
 
 fn main() {
